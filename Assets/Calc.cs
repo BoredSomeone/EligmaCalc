@@ -106,9 +106,12 @@ public class Calc : MonoBehaviour
 
         if (startPriceNum > 0)
         {
-            if (needNum > startPriceNum)
+            int nowbuyable = 20 - startPriceNum;
+            if (needNum > nowbuyable)
             {
-                needNum -= startPriceNum;
+                result += nowbuyable * startPrice;
+                needNum -= nowbuyable;
+                ++startPrice;
             }
             else
             {

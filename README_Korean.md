@@ -1,6 +1,8 @@
 # 블루 아카이브 엘리그마 계산기
 안녕하세요! 선생님. 엘리그마 계산기는 현재 서비스 중인 게임 **블루 아카이브**에서 엘레프를 구매할 때 들어가는 **엘리그마의 비용**을 쉽게 계산해 줍니다. 
 
+[웹 버전](https://boredsomeone.github.io/EligmaCalcWeb/)
+
 ### 사용 방법
 총 5개의 필드에 값을 입력하면 필요한 엘레프와 엘리그마의 양을 계산해줍니다.
 ![image](https://github.com/user-attachments/assets/6d8ffd91-bc46-47e3-8fb2-9ae603162eca)

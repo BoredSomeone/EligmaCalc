@@ -4,6 +4,8 @@ Hello! Sensei. The Eligma Calculator easily calculates the **cost of Eligma** wh
 [🇰🇷한국어](https://github.com/BoredSomeone/EligmaCalc/blob/main/README_Korean.md)
 [🇯🇵日本語](https://github.com/BoredSomeone/EligmaCalc/blob/main/README_Japanese.md)
 
+[Web Build](https://boredsomeone.github.io/EligmaCalcWeb/)
+
 ### How to Use
 By entering values into a 5 fields, it calculates the required amount of Eleph and Eligma. 
 ![image](https://github.com/user-attachments/assets/6d8ffd91-bc46-47e3-8fb2-9ae603162eca)

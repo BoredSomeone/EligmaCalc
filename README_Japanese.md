@@ -1,6 +1,8 @@
 # ブルーアーカイブの新名のカケラ計算機
 こんにちは！先生。新名文字計算機は、現在サービス中のゲーム**ブルーアーカイブ**で新名文字を購入する際の**新名のカケラの量**を簡単に計算します。
 
+[ウェブバージョン](https://boredsomeone.github.io/EligmaCalcWeb/)
+
 ### 使用方法
 合計5つのフィールドに値を入力することで、必要な新名文字と新名のカケラの量を計算します。
 ![image](https://github.com/user-attachments/assets/6d8ffd91-bc46-47e3-8fb2-9ae603162eca)

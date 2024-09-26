@@ -15,6 +15,6 @@ public class LanguageContorllerElement : MonoBehaviour
 
     public void TextChange()
     {
-        gameObject.GetComponent<Text>().text = lc.Text(ID);
+        gameObject.GetComponent<Text>().text = lc.Text(ID).Replace(' ', '\u00A0');
     }
 }

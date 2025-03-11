@@ -12,7 +12,7 @@ public class TextSizeFitter : MonoBehaviour
 
     private void Start()
     {
-        FontSizeFit();
+        DelayedUpdateTextSize();
         preScreenWidth = Screen.width;
         preScreenHeight = Screen.height;
     }
@@ -21,26 +21,25 @@ public class TextSizeFitter : MonoBehaviour
     {
         if (preScreenWidth != Screen.width || preScreenHeight != Screen.height)
         {
-            StartCoroutine(FontSizeFitter());
+            UpdateTextSize();
             preScreenWidth = Screen.width;
             preScreenHeight = Screen.height;
         }
     }
 
-    void FontSizeFit()
+    public void UpdateTextSize()
     {
-        for (int i = 0; i < Texts.Length; i++)
-        {
-            Texts[i].enableAutoSizing = true;
-        }
+        StartCoroutine(FontSizeFitter());
+    }
 
-        float minSize = Texts.Min(t => t.fontSize);
-
-        for (int i = 0; i < Texts.Length; i++)
-        {
-            Texts[i].enableAutoSizing = false;
-            Texts[i].fontSize = minSize;
-        }
+    public void DelayedUpdateTextSize()
+    {
+        StartCoroutine(DelayedStart());
+    }
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForEndOfFrame();
+        UpdateTextSize();
     }
 
     IEnumerator FontSizeFitter()

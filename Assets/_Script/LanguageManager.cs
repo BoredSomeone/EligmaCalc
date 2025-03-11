@@ -8,6 +8,7 @@ public class LanguageManager : MonoBehaviour
 {
     public Dropdown ddlanguage;
     public UnityEvent changeEvent;
+    public TextSizeFitter tsf;
 
     public Calc calc;
     public void Start()
@@ -27,5 +28,6 @@ public class LanguageManager : MonoBehaviour
         lc.nowLanguage = (lc.Language)ddlanguage.value;
         calc.SetInt();
         changeEvent.Invoke();
+        tsf.DelayedUpdateTextSize();
     }
 }

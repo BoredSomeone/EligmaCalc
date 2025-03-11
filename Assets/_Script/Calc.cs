@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +9,6 @@ using UnityEngine.UIElements;
 
 public class Calc : MonoBehaviour
 {
-    public Dropdown ddlanguage;
     public InputField ifStartStar;   //시작 성급
     public InputField ifEndStar;     //목표 성급
 
@@ -17,7 +17,7 @@ public class Calc : MonoBehaviour
     public InputField ifStartPrice;  //시작 구매 가격
     public InputField ifStartPriceNum;//현재 가격으로 몇개나 삼?
 
-    public Text resultText;
+    public TMP_Text resultText;
 
     int[] UpTable = { 0, 30, 80, 100, 120, 120, 180 };
     public int needNum = 0;
@@ -27,8 +27,6 @@ public class Calc : MonoBehaviour
     public int endStar;
     public int startPrice;
     public int startPriceNum;
-
-    public UnityEvent changeEvent;
 
 
     private void Start()
@@ -142,10 +140,4 @@ public class Calc : MonoBehaviour
         return result;
     }
 
-    public void ChangeLanguage()
-    {
-        lc.nowLanguage = (lc.Language)ddlanguage.value;
-        SetInt();
-        changeEvent.Invoke();
-    }
 }

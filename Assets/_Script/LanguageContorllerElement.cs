@@ -21,7 +21,8 @@ public class LanguageContorllerElement : MonoBehaviour
 
     public void TextChange()
     {
-        text.text = lc.Text(ID).Replace(' ', '\u00A0');
+        if (!string.IsNullOrEmpty(ID))
+            text.text = lc.Text(ID).Replace(' ', '\u00A0');
         text.font = lm.GetFont();
     }
 }

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class LanguageManager : MonoBehaviour
 {
-    public Dropdown ddlanguage;
+    public List<TMP_FontAsset> fonts;
     public UnityEvent changeEvent;
     public TextSizeFitter tsf;
 
@@ -19,15 +21,20 @@ public class LanguageManager : MonoBehaviour
     void SetStartLanguage()
     {
         if (Application.systemLanguage == SystemLanguage.Korean)
-            ddlanguage.value = 0;
+            ChangeLanguage(0);
         else if (Application.systemLanguage == SystemLanguage.Japanese)
-            ddlanguage.value = 1;
+            ChangeLanguage(1);
     }
-    public void ChangeLanguage()
+    public void ChangeLanguage(int langCode)
     {
-        lc.nowLanguage = (lc.Language)ddlanguage.value;
+        lc.nowLanguage = (lc.Language)langCode;
         calc.SetInt();
         changeEvent.Invoke();
         tsf.DelayedUpdateTextSize();
+    }
+
+    public TMP_FontAsset GetFont()
+    {
+        return fonts[(int)lc.nowLanguage];
     }
 }

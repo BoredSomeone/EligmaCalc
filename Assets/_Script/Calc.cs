@@ -9,17 +9,17 @@ using UnityEngine.UIElements;
 
 public class Calc : MonoBehaviour
 {
-    public InputField ifStartStar;   //시작 성급
-    public InputField ifEndStar;     //목표 성급
+    public RadioGroup radioStartStar;   //시작 성급
+    public RadioGroup radioEndStar;     //목표 성급
 
     public InputField ifStartNum;    //지금 몇개나 있음?
 
-    public InputField ifStartPrice;  //시작 구매 가격
+    public RadioGroup radioStartPrice;  //시작 구매 가격
     public InputField ifStartPriceNum;//현재 가격으로 몇개나 삼?
 
     public TMP_Text resultText;
 
-    int[] UpTable = { 0, 30, 80, 100, 120, 120, 180 };
+    int[] UpTable = { 0, 30, 80, 100, 120, 120, 180, 200 };
     public int needNum = 0;
 
     public int startStar;
@@ -38,21 +38,13 @@ public class Calc : MonoBehaviour
     {
         try
         {
-            startStar = int.Parse(ifStartStar.text);
-            endStar = int.Parse(ifEndStar.text);
+            startStar = radioStartStar.radioInt;
+            endStar = radioEndStar.radioInt;
             startNum = int.Parse(ifStartNum.text);
-            startPrice = int.Parse(ifStartPrice.text);
+            startPrice = radioStartPrice.radioInt;
             startPriceNum = int.Parse(ifStartPriceNum.text);
 
             string t = "";
-            if (startStar < 1 || startStar > 7)
-            {
-                t += lc.Text("시성확") + " (1 ~ 7)\n";
-            }
-            if (endStar < startStar || startStar > 7)
-            {
-                t += lc.Text("시성확") + " (" + startNum + " ~ 7)\n";
-            }
             if(startPrice > 20)
             {
                 t += lc.Text("현가확") + "\n";

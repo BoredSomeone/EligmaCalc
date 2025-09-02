@@ -7,15 +7,21 @@ using TMPro;
 public class LanguageContorllerElement : MonoBehaviour
 {
     public string ID;
+
+    TMP_Text text;
+    LanguageManager lm;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("GameManager").GetComponent<LanguageManager>().changeEvent.AddListener(TextChange);
+        text = gameObject.GetComponent<TMP_Text>();
+        lm = GameObject.Find("GameManager").GetComponent<LanguageManager>();
+        lm.changeEvent.AddListener(TextChange);
         TextChange();
     }
 
     public void TextChange()
     {
-        gameObject.GetComponent<TMP_Text>().text = lc.Text(ID).Replace(' ', '\u00A0');
+        text.text = lc.Text(ID).Replace(' ', '\u00A0');
+        text.font = lm.GetFont();
     }
 }

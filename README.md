@@ -8,7 +8,7 @@ Hello! Sensei. The Eligma Calculator easily calculates the **cost of Eligma** wh
 
 ### How to Use
 By entering values into a 5 fields, it calculates the required amount of Eleph and Eligma. 
-![image](https://github.com/user-attachments/assets/6d8ffd91-bc46-47e3-8fb2-9ae603162eca)
+![image](https://github.com/user-attachments/assets/c8b2a232-8228-47e6-9acb-100563a18c69)
 
 1. Select a language. Currently, Korean and Japanese are supported.
 2. Enter the current ☆ of the student you wish to strengthen.
@@ -26,13 +26,11 @@ By entering values into a 5 fields, it calculates the required amount of Eleph a
 Below is some boring technical documentation. Feel free to skip if you only want to use it.
 
 ### Project Development Environment
-- **Unity 2022.3.4f1**
-
+- ~~Unity 2022.3.4f1~~ (Runaway from bug)
+- **Unity 6.0 (6000.0.54f1)**
+- 
 ### Project Progress
 * Confirmed to work properly.
-
-#### 기타 잡담
-* UI design is tedious << Please don’t assign such tasks to engineers...
 
 #### 예정 중인 기능
 * Ah... It's need to do the English translation...

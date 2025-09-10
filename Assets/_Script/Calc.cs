@@ -12,10 +12,10 @@ public class Calc : MonoBehaviour
     public RadioGroup radioStartStar;   //시작 성급
     public RadioGroup radioEndStar;     //목표 성급
 
-    public InputField ifStartNum;    //지금 몇개나 있음?
+    public IntInputFieldLimiter ifHasNum;    //지금 몇개나 있음?
 
     public RadioGroup radioStartPrice;  //시작 구매 가격
-    public InputField ifStartPriceNum;//현재 가격으로 몇개나 삼?
+    public StepperGroup stepperStartPriceNum;//현재 가격으로 몇개나 삼?
 
     public TMP_Text resultText;
 
@@ -40,15 +40,11 @@ public class Calc : MonoBehaviour
         {
             startStar = radioStartStar.radioInt;
             endStar = radioEndStar.radioInt;
-            startNum = int.Parse(ifStartNum.text);
+            startNum = ifHasNum.value;
             startPrice = radioStartPrice.radioInt;
-            startPriceNum = int.Parse(ifStartPriceNum.text);
+            startPriceNum = stepperStartPriceNum.value;
 
             string t = "";
-            if(startPrice > 20)
-            {
-                t += lc.Text("현가확") + "\n";
-            }
             if(startPriceNum < 0 || startPriceNum > 20)
             {
                 t += lc.Text("현구확") + "\n";
